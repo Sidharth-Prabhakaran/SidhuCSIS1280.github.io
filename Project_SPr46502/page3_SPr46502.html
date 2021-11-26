@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Sidharth Prabhakaran">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>My Project</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/cssvalidation.css">
+        <script src="script/page3_validation.js"></script>
+
+    </head>
+    <body>
+        <header><h1>Report Card Generator</h1></header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2_SPr46502.html">The Quiz</a></li>
+                <li><a href="page3_SPr46502.html">Report Generator</a></li>  
+            </ul>
+        </nav>
+        <section>
+            <form name="myform" action='' method="get">
+                <fieldset id="fs1">
+                    <legend>Subject Count</legend>
+                    <div>
+                        <label for="studName">Student Name : </label>                        
+                        <input type="text" name="studName" id="studName" placeholder="Sid" required>
+                    </div>
+                    <div>
+                        <label for="studentId">Student ID : </label>                        
+                        <input type="text" name="studentId" id="studentId" placeholder="nnnnnnn" pattern="\d{5}" required>
+                    </div>
+                    <div>
+                        <label for="date">Date Of Birth : </label>                        
+                        <input type="date" name="date" id="date" min="1962-01-01" max="2005-12-31"required>
+                    </div>
+                    <div >
+                        <label for="subjectCount">Select No.of Subjects</label>
+                        <select name="subjectCount" id="subCount" size="1" onchange="addSubject(this.form)" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>  
+                    
+                </fieldset>
+                <input id="submitButton" type="button" name="Generate Report" value="Generate Report" onclick="validate(this.form)" >
+                <fieldset>
+                    <legend>Report Card</legend>
+                    <section class="grid" id="gridSection">
+                        <div id="grid_1">Report Card</div>
+                        <div id="grid_2">Student Name : </div>
+                        <div id="grid_3">Name</div>
+                        <div id="grid_4">Student ID : </div>
+                        <div id="grid_5">ID</div>
+                        <div id="grid_6">DOB</div>
+                        <div id="grid_7">dob</div>
+                        <div id="grid_8">Subject</div>
+                        <div id="grid_9">Marks Obtained</div>
+                        <div id="grid_10">Grade</div>
+                    </section>
+                </fieldset>
+            </form>
+        </section>
+        <footer >
+            <small><cite> CSIS 1280 Project Copyright &copy; Sidharth Prabhakaran</cite></small>
+        </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Sidharth Prabhakaran">
+        <meta charset="utf-8">
+        <title>My Project</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/cssvalidation.css">
+        
+        <script src="script/validation.js"></script>
+
+    </head>
+    <body>
+        <header><h1>Time For a Quiz</h1></header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2_SPr46502.html">The Quiz</a></li>
+                <li><a href="page3_SPr46502.html">Report Generator</a></li>  
+            </ul>
+        </nav>
+        <aside>Let us test your knowledge on Cartoon characters. <br> Look at the images of the 
+            characters and try guessing their name right. <br> All images have been taken from
+            <cite>https://unsplash.com/s/photos/cartoon-character</cite>
+        </aside>
+        <form action="" method="GET"  enctype="application/x-www-form-urlencoded" >
+            <fieldset id="question1">
+                <legend>Question 1</legend>
+                <div >
+                    <label for="q1"><img src="images/batman.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q1" id="q1" value="False"  required>SuperMan
+                        <br><br><br><input type="radio" name="q1" id="q1.1" value="True" > BatMan
+                        <br><br><br><input type="radio" name="q1" id="q1.2" value="False" > Heman
+                        <br><br><br><input type="radio" name="q1" id="q1.3" value="False" > SpiderMan
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question2">
+                <legend>Question 2</legend>
+                <div >
+                    <label for="q2"><img src="images/deadpool.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q2" id="q2" value="True"  required>Deadpool
+                        <br><br><br><input type="radio" name="q2" id="q2.1" value="False" > Liverpool
+                        <br><br><br><input type="radio" name="q2" id="q2.2" value="False" > IronMan
+                        <br><br><br><input type="radio" name="q2" id="q2.3" value="False" > Wolverine
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question3">
+                <legend>Question 3</legend>
+                <div >
+                    <label for="q3"><img src="images/dexter.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q3" id="q3" value="False"  required>Didi
+                        <br><br><br><input type="radio" name="q3" id="q3.1" value="False" > Phineas
+                        <br><br><br><input type="radio" name="q3" id="q3.2" value="True" > Dexter
+                        <br><br><br><input type="radio" name="q3" id="q3.3" value="False" > Flinstone
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question4">
+                <legend>Question 4</legend>
+                <div >
+                    <label for="q4"><img src="images/dobby.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q4" id="q4" value="False"  required>Doggy
+                        <br><br><br><input type="radio" name="q4" id="q4.1" value="True" > Dobby
+                        <br><br><br><input type="radio" name="q4" id="q4.2" value="False" > Harry
+                        <br><br><br><input type="radio" name="q4" id="q4.3" value="False" > Fairy
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question5">
+                <legend>Question 5</legend>
+                <div >
+                    <label for="q5"><img src="images/Goku.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q5" id="q5" value="False"  required>Pikachu
+                        <br><br><br><input type="radio" name="q5" id="q5.1" value="False" > Hulk
+                        <br><br><br><input type="radio" name="q5" id="q5.2" value="True" > Goku
+                        <br><br><br><input type="radio" name="q5" id="q5.3" value="False" > DragonBooster
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question6">
+                <legend>Question 6</legend>
+                <div>
+                    <label for="q6"><img src="images/minion.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q6" id="q6" value="False"  required>Gru
+                        <br><br><br><input type="radio" name="q6" id="q6.1" value="False" > Agnes
+                        <br><br><br><input type="radio" name="q6" id="q6.2" value="False" > Nefario
+                        <br><br><br><input type="radio" name="q6" id="q6.3" value="True" > Minion
+                    </span>
+                    
+                </div> 
+            </fieldset>
+            <fieldset id="question7">
+                <legend>Question 7</legend>
+                <div >
+                    <label for="q7"><img src="images/woody.jpg" alt="batman" width="200px" height="200px"></label> <br>
+                    <span>
+                        <input type="radio" name="q7" id="q7" value="False"  required>Buzz Lightyear
+                        <br><br><br><input type="radio" name="q7" id="q7.1" value="True" > Woody
+                        <br><br><br><input type="radio" name="q7" id="q7.2" value="False" > Rocky
+                        <br><br><br><input type="radio" name="q7" id="q7.3" value="False" > Muddy
+                    </span>
+                    
+                </div> 
+            </fieldset>
+               <input type="button" value = "Submit" onclick="validate(form)">
+            <!-- <button type="button" onclick="validate(form)">
+                Submit your Answers!
+            </button> -->
+            
+        </form>
+        <p id="score"></p>
+        <footer >
+            <small><cite> CSIS 1280 Project Copyright &copy; Sidharth Prabhakaran</cite></small>
+        </footer>
+    </body>
+</html>
