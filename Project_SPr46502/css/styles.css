@@ -65,6 +65,9 @@ fieldset > div{
 fieldset > div > *{
     flex: 1 1 50%;
 }
+fieldset#button{
+    border: 0;
+}
 
 iframe{
     margin-left: 50px;
