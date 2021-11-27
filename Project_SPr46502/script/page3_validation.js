@@ -1,23 +1,26 @@
-function validate(form){
+var count_sub;
+function validateForm(form){
     // console.log("inside vaidate");
-    if(validateName(form) && validateId(form) && validateSub(form) && validateMarks(form)){
+    if(validateName(form) && validateId(form) &&validateDate(form)&& validateSubcount(form)&& validateSub(form) && validateMarks(form)){
         generate(form);
     }else{
         return false;
     }
 }
 
-var count_sub;
+
 
 function validateName(form){
-    var name = form.elements["studName"];
-    // console.log("inside validation if");
-    if(name.validity.valueMissing){                 
+    var name = document.getElementById("studName");
+    // console.log(name);
+    if(name.validity.valueMissing){  
+        name.reportValidity();  
         name.setCustomValidity("Please enter your name here");
-        
+        // console.log("inside if internal");
         return false;
     }
     else{
+        name.reportValidity();
         name.setCustomValidity("");
         return true;
     }
@@ -27,19 +30,57 @@ function validateId(form){
     var studId = form.elements["studentId"];
     
     if(studId.validity.valueMissing){
-           
+        studId.reportValidity();
         studId.setCustomValidity("Please enter your Stud Id");
         return false;
     }
     else if(studId.validity.patternMismatch){
+        studId.reportValidity();
         studId.setCustomValidity("Enter a valid 5 digit code");
         return false;
     }
     else{
+        studId.reportValidity();
         studId.setCustomValidity("");
         return true;
     }
 }
+function validateDate(form){
+    var date = form.elements["date"];
+    // alert(name);
+   
+    if(date.validity.valueMissing){                 
+        date.reportValidity();
+        date.setCustomValidity("Please enter the date");
+        return false;
+        
+    }
+    else if (date.validity.rangeUnderFlow){
+        date.reportValidity();
+        date.setCustomValidity("Please enter greater than sep 1, 2000");
+        return false;
+    }else if (date.validity.rangeOverFlow){
+        date.reportValidity();
+        date.setCustomValidity("Please enter lesser than dec 31, 2021");
+        return false;
+    }else
+    {
+        date.reportValidity();
+        date.setCustomValidity("");
+        return true;
+    }
+} 
+function validateSubcount(form){
+    var subcount = document.getElementById("subCount");
+    if(subcount.validity.valueMissing){
+        subcount.reportValidity();
+        subcount.setCustomValidity("Please select the number of Subjects");
+    }else{
+        subcount.reportValidity();
+        subcount.setCustomValidity("");
+    }
+}
+
 function validateSub(form){
     for(i=0;i<count_sub;i++){
         var res = true;
@@ -48,10 +89,11 @@ function validateSub(form){
         // console.log(element);
 
         if(element.validity.valueMissing){
-           
+            element.reportValidity();
             element.setCustomValidity("Please enter Subject Name");
             res = false;
         }else{
+            element.reportValidity();
             element.setCustomValidity("");
             res = true;
         }
@@ -66,17 +108,20 @@ function validateMarks(form){
         // console.log(element);
 
         if(element.validity.valueMissing){
-           
+            element.reportValidity();
             element.setCustomValidity("Please enter Marks");
             res = false;
         }else if(0 > element.value || 100< element.value ){
+            element.reportValidity();
             element.setCustomValidity("Mark should be within range(0,100)");
             res =  false;
         }else if (isNaN(element.value)){
+            element.reportValidity();
             element.setCustomValidity("Please enter a valid number");
             res = false;
         }
         else{
+            element.reportValidity();
             element.setCustomValidity("");
             res =  true;
         }
@@ -118,6 +163,7 @@ function addSubject(form){
 }
 
 function generate(form){
+    
     document.getElementById("grid_3").innerText = document.getElementById("studName").value;
     document.getElementById("grid_5").innerText = document.getElementById("studentId").value;
     document.getElementById("grid_7").innerText = document.getElementById("date").value;
